@@ -1,0 +1,13 @@
+---
+# handlers file for test-role
+- name: start httpd service
+  service:
+    name: httpd
+    state: started
+  when: ansible_os_family == "RedHat"
+
+- name: start apache2 service
+  service:
+    name: apache2
+    state: started
+  when: ansible_os_family == "Debian"

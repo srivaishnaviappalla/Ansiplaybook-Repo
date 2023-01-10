@@ -1,0 +1,11 @@
+---
+- name: My Test Playbook
+  hosts: webservers
+  become: true
+  tasks:
+    - name: copying a file
+      copy:
+        src: /home/ansadmin/index.html
+        dest: /home/ansadmin
+        mode: 0600
+        owner: rohit
